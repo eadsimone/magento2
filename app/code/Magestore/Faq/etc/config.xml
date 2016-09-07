@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magestore
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Magestore
+ * @package     Magestore_Faq
+ * @copyright   Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license     http://www.magestore.com/license-agreement.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+	    <faq>
+	        <general>
+				<active>1</active>
+				<page_size_number>20</page_size_number>
+				<show_sidebar>1</show_sidebar>
+				<sidebar_position>sidebar-right</sidebar_position>
+				<sidebar_question_number>5</sidebar_question_number>
+				<tag_number>20</tag_number>
+	        </general>
+	    </faq>
+	</default>
+</config>

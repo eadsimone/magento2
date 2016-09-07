@@ -1,0 +1,23 @@
+* * * * * /usr/bin/php /home/edesimone/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" >> /home/edesimone/www/magento2/var/log/magento.cron.log
+* * * * * /usr/bin/php /home/edesimone/www/magento2/update/cron.php >> /home/edesimone/www/magento2/var/log/update.cron.log
+* * * * * /usr/bin/php /home/edesimone/www/magento2/bin/magento setup:cron:run >> /home/edesimone/www/magento2/var/log/setup.cron.log
+
+
+after installed Create the cron job in local i proceed to install the mailchimp module it give me  some error when compile it is bug here is teh solution 
+https://github.com/magento/magento2/blob/099ed19fca140878d1e21884abb51ba0c6f3e609/app/code/Magento/Newsletter/Test/Unit/Model/Queue/TransportBuilderTest.php
+
+after that finally I got the MaegMonkey installed. 
+
+I would like to know if you have a testing mailchimp account, I do not want to put garbage(I mean maybe testing user/subcription, etc) in the client mailchimp account seeing how everything is working. 
+
+
+
+* * * * * <path to php binary> <magento install dir>/bin/magento cron:run | grep -v "Ran jobs by schedule" >> <magento install dir>/var/log/magento.cron.log
+* * * * * <path to php binary> <magento install dir>/update/cron.php >> <magento install dir>/var/log/update.cron.log
+* * * * * <path to php binary> <magento install dir>/bin/magento setup:cron:run >> <magento install dir>/var/log/setup.cron.log
+
+<path to php binary> 
+
+* * * * * /usr/bin/php /home/edesimone/www/sellry/sellrystage/bin/magento cron:run | grep -v "Ran jobs by schedule" >> /home/edesimone/www/sellry/sellrystage/var/log/magento.cron.log
+* * * * * /usr/bin/php /home/edesimone/www/sellry/sellrystage/update/cron.php >> /home/edesimone/www/sellry/sellrystage/var/log/update.cron.log
+* * * * * /usr/bin/php /home/edesimone/www/sellry/sellrystage/bin/magento setup:cron:run >> /home/edesimone/www/sellry/sellrystage/var/log/setup.cron.log

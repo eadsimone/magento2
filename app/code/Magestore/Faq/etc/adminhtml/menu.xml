@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magestore
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Magestore
+ * @package     Magestore_Faq
+ * @copyright   Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license     http://www.magestore.com/license-agreement.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Magestore_Faq::faq" title="FAQ" module="Magestore_Faq" sortOrder="40"
+             resource="Magestore_Faq::faq"/>
+        <add id="Magestore_Faq::faq_faq" title="Manage FAQ" module="Magestore_Faq" sortOrder="1"
+             parent="Magestore_Faq::faq" action="faqadmin/faq/index"
+             resource="Magestore_Faq::faq_faq"/>
+        <add id="Magestore_Faq::faq_category" title="Manage Category" module="Magestore_Faq" sortOrder="2"
+             parent="Magestore_Faq::faq" action="faqadmin/category/index"
+             resource="Magestore_Faq::category"/>
+        <add id="Magestore_Faq::config_faq" title="Settings" module="Magestore_Faq" sortOrder="4"
+             parent="Magestore_Faq::faq" action="adminhtml/system_config/edit/section/faq"
+             resource="Magestore_Faq::config_faq"/>
+    </menu>
+</config>

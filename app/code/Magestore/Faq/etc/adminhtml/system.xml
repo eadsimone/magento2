@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magestore
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Magestore
+ * @package     Magestore_Faq
+ * @copyright   Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license     http://www.magestore.com/license-agreement.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="magestore" translate="label" sortOrder="0">
+            <label>Magestore</label>
+        </tab>
+        <section id="faq" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <class>separator-top</class>
+            <label>FAQ</label>
+            <tab>magestore</tab>
+            <resource>Magestore_Faq::config_faq</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>General Configuration</label>
+                <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Enable FAQ</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="page_size_number" translate="label" type="text" sortOrder="2" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Number of questions per page</label>
+                    <comment>The number of questions shown on one page. If the value is empty or 0, default will be 20</comment>
+                </field>
+                <field id="show_sidebar" translate="label" type="select" sortOrder="3" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Display Most Frequently FAQs on sidebar</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Show the Most Frequently FAQs on sidebar or not</comment>
+                </field>
+                <field id="sidebar_question_number" translate="label" type="text" sortOrder="4" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Number of questions on sidebar</label>
+                    <comment>The number of Most Frequently Asked Questions shown on sidebar. If the value is empty or 0, default will be 5</comment>
+                    <depends>
+                        <field id="show_sidebar">1</field>
+                    </depends>
+                </field>
+                <field id="sidebar_position" translate="label" type="select" sortOrder="5" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Position of sidebar (3 columns layout)</label>
+                    <source_model>Magestore\Faq\Model\Config\Source\Listposition</source_model>
+                    <comment>Position of sidebar (if the layout is 3 columns)</comment>
+                    <depends>
+                        <field id="show_sidebar">1</field>
+                    </depends>
+                </field>
+                <field id="tag_number" translate="label" type="text" sortOrder="6" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Number of tags show in sidebar</label>
+                    <comment>Number of tags shown in sidebar. If the value is empty or 0, default will be 20</comment>
+                </field>
+                <field id="meta_keywords" translate="label" type="textarea" sortOrder="7" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Meta Keywords</label>
+                </field>
+                <field id="meta_description" translate="label" type="textarea" sortOrder="8" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Meta Description</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

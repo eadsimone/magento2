@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magestore
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Magestore
+ * @package     Magestore_Faq
+ * @copyright   Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license     http://www.magestore.com/license-agreement.html
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+      layout="1column" >
+    <head>
+        <title>Frequently Asked Question</title>
+    </head>
+    <body>
+        <referenceBlock name="page.main.title" remove="true"/>
+        <referenceBlock name="root">
+            <action method="setHeaderTitle">
+                <argument translate="true" name="title" xsi:type="string">FAQ</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="Magestore\Faq\Block\Overview" name="faq" template="faq.phtml" cacheable="false">
+                <block class="Magestore\Faq\Block\Tag" name="faq.tags" template="tags.phtml" />
+                <block class="Magestore\Faq\Block\Listfaq" name="faq.listing" template="list.phtml" />
+            </block>
+        </referenceContainer>
+
+    </body>
+</page>

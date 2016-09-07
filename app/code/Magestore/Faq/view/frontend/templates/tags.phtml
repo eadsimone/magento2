@@ -1,0 +1,61 @@
+<?php
+/**
+ * Magestore
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Magestore
+ * @package     Magestore_Faq
+ * @copyright   Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license     http://www.magestore.com/license-agreement.html
+ */
+$tags = $block->getAllTags();
+$store_Id = $this->helper('Magestore\Faq\Helper\Data')->getStoreId();
+$tag_number = $this->helper('Magestore\Faq\Helper\Data')->getTagNumber();
+if($tag_number==null || $tag_number==0) {
+    $tag_number = 20;
+}
+$count = 0;
+?>
+<?php if(count($tags)): ?>
+    <div id="magestore-box-tags" class="magestore-faq-tags">
+        <div class="ms-popular-title">
+            <strong><span><?php echo __('Popular Tags') ?></span></strong>
+        </div>
+        <?php foreach($tags as $tag): ?>
+            <?php if($count<$tag_number){ ?>
+                <a title="<?php echo $tag;?>" onclick="moveright(this);loadfaq(this,'tag','<?php echo $tag ?>',1)"
+                   class="faq-tag faq-link"><?php echo $tag; ?></a>
+            <?php }else{?>
+                <a style="display:none" title="<?php echo $tag;?>" onclick="moveright(this);
+                    loadfaq(this,'tag','<?php echo $tag ?>',1)"
+                   class="faq-tag faq-link ms-extra-tags"><?php echo $tag; ?></a>
+            <?php } ?>
+            <?php $count++; endforeach; ?>
+        <?php if($count>$tag_number){ ?>
+            <div id="ms-action-tags"><a class="ms-view-all-tags" title="View All Tags" onclick="showAllTags()"><?php echo __('View All Tags') ?></a></div>
+        <?php } ?>
+    </div>
+<?php endif; ?>
+<script>
+    function showAllTags(){
+        require([
+            'jquery'
+        ], function($){
+            var msExtraTags = $('.ms-extra-tags');
+            $('#ms-action-tags').hide();
+            for(i=0;i<msExtraTags.length;i++){
+                msExtraTags[i].style.display = 'block';
+            }
+        });
+    }
+</script>
